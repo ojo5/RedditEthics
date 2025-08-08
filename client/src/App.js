@@ -1,12 +1,12 @@
+
+
+
 import React from 'react';
+import HomePage from './components/HomePage';
 
 function App() {
-  return (
-    <div style={{ padding: '2rem', fontFamily: 'Arial, sans-serif', textAlign: 'center' }}>
-    <h1>Ethics Learning Platform</h1>
-    <p>Welcome!</p>
-    </div>
-  );
+  return <HomePage />;
 }
 
 export default App;
+
