@@ -13,10 +13,6 @@ import TheoryContent from "../components/TheoryContent";
 import ProgressSidebar from "../components/ProgressSidebar";
 import modulesData from "../data/modulesMdData";
 import QuestionCard from "../components/QuestionCard";
-import { Grid, Box } from "@mui/material";
-import modulesData from "../data/modulesData";
-import TheoryContent from "../components/TheoryContent";
-import ProgressSidebar from "../components/ProgressSidebar";
 
 export default function TheoryModulePage() {
   const [activeModule, setActiveModule] = useState(0);
@@ -90,25 +86,25 @@ export default function TheoryModulePage() {
     <Grid container spacing={2} sx={{ mx: 20 }}>
     {/* Main content */}
     <Grid item size={9} md={9} sx={{ mt: 20 }}>
-      <TheoryContent
-      module={modulesData[activeModule]}
-      isComplete={completedModules.includes(
-        modulesData[activeModule].id
-      )}
-      onToggleComplete={toggleComplete}
-      />
+    <TheoryContent
+    module={modulesData[activeModule]}
+    isComplete={completedModules.includes(
+      modulesData[activeModule].id
+    )}
+    onToggleComplete={toggleComplete}
+    />
 
-      {/* Modular Question Card */}
-      <QuestionCard
-      question="What is the capital of France?"
-      type="radio"
-      options={["Paris", "London", "Rome"]}
-      onHint={() => alert("It's known as the city of love ❤️")}
-      onAnswer={() => alert("Correct answer: Paris")}
-      onPrev={() => alert("Go to previous question")}
-      onNext={() => alert("Go to next question")}
-      onMarkDone={toggleComplete}
-      />
+    {/* Modular Question Card */}
+    <QuestionCard
+    question="What is the capital of France?"
+    type="radio"
+    options={["Paris", "London", "Rome"]}
+    onHint={() => alert("It's known as the city of love ❤️")}
+    onAnswer={() => alert("Correct answer: Paris")}
+    onPrev={() => alert("Go to previous question")}
+    onNext={() => alert("Go to next question")}
+    onMarkDone={toggleComplete}
+    />
     </Grid>
 
     {/* Sidebar */}
@@ -131,41 +127,5 @@ export default function TheoryModulePage() {
     {drawer}
     </Drawer>
     </>
-      prev.includes(moduleId)
-        ? prev.filter((id) => id !== moduleId)
-        : [...prev, moduleId]
-    );
-  };
-
-  return (
-    <Grid container spacing={2} sx={{ p: 2, pt: 8 }}>
-      {/* Main Theory Section */}
-      <Grid item xs={12} md={9}>
-        <TheoryContent
-          module={modulesData[activeModule]}
-          isComplete={completedModules.includes(modulesData[activeModule].id)}
-          onToggleComplete={toggleComplete}
-        />
-      </Grid>
-
-      {/* Sidebar */}
-      <Grid
-        item
-        xs={12}
-        md={3}
-        sx={{
-          borderLeft: { md: "1px solid", xs: "none" },
-          borderColor: "divider",
-          pl: { md: 2, xs: 0 },
-        }}
-      >
-        <ProgressSidebar
-          modules={modulesData}
-          activeIndex={activeModule}
-          completedModules={completedModules}
-          onSelectModule={setActiveModule}
-        />
-      </Grid>
-    </Grid>
   );
 }

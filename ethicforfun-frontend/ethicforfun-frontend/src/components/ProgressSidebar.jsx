@@ -7,10 +7,7 @@ import {
   ListItemText,
   ListItemIcon,
   Checkbox,
-<<<<<<< Updated upstream
   ListItemButton,
-=======
->>>>>>> Stashed changes
 } from "@mui/material";
 
 export default function ProgressSidebar({
@@ -21,7 +18,6 @@ export default function ProgressSidebar({
 }) {
   return (
     <>
-<<<<<<< Updated upstream
     <Typography variant="h6" gutterBottom>
     Curriculum Progress
     </Typography>
@@ -54,39 +50,6 @@ export default function ProgressSidebar({
       </ListItem>
     ))}
     </List>
-=======
-      <Typography variant="h6" gutterBottom>
-        Curriculum Progress
-      </Typography>
-      <Divider sx={{ mb: 2 }} />
-      <List>
-        {modules.map((module, index) => (
-          <ListItem
-            button
-            key={module.id}
-            selected={activeIndex === index}
-            onClick={() => onSelectModule(index)}
-            sx={{
-              borderRadius: 1,
-              "&.Mui-selected": {
-                bgcolor: "primary.light",
-                color: "primary.contrastText",
-              },
-            }}
-          >
-            <ListItemIcon>
-              <Checkbox
-                edge="start"
-                checked={completedModules.includes(module.id)}
-                tabIndex={-1}
-                disableRipple
-              />
-            </ListItemIcon>
-            <ListItemText primary={module.title} />
-          </ListItem>
-        ))}
-      </List>
->>>>>>> Stashed changes
     </>
   );
 }

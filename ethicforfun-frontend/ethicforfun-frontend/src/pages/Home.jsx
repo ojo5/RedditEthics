@@ -1,24 +1,8 @@
 import { Container, Typography, Box, Paper } from "@mui/material";
-import HeroSection from "../components/HeroSection";
 
 function Home() {
   return (
     <Container sx={{ marginTop: "100px" }}>
-
-
-    <Box
-    size={{
-      minHeight: "10vh",
-      bgcolor: "background.default",
-      color: "text.primary",
-      display: "flex",
-      flexDirection: "column",
-      pt: 8, // space for navbar
-    }}
-    >
-    <HeroSection />
-    </Box>
-
     <Paper elevation={3} sx={{ padding: "2rem", backgroundColor: "#f6f6f6" }}>
     <Typography variant="h4" gutterBottom>
     Welcome to Ethic for Fun
@@ -40,6 +24,8 @@ function Home() {
     <li>Progress tracking</li>
     </ul>
     </Paper>
-
-
     </Container>
+  );
+}
+
+export default Home;
